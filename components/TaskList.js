@@ -1,8 +1,17 @@
 import React from 'react';
 import {
-  Text,
-  ListView
+  ListView,
+  StyleSheet
  } from 'react-native';
+
+import { TaskRow }  from './TaskRow'
+
+const styles = StyleSheet.create({
+  container: {
+    paddingTop: 40,
+    backgroundColor: '#F7F7F7',        
+  },
+});
 
 export class TaskList extends React.Component{
   constructor(props, context){
@@ -19,7 +28,7 @@ export class TaskList extends React.Component{
 
   renderRow(todo){
     return(
-      <Text>{todo.task}</Text>
+      <TaskRow todo={todo} />
     );
   }
 
@@ -28,6 +37,7 @@ export class TaskList extends React.Component{
       <ListView
         dataSource={this.state.dataSource}
         renderRow={this.renderRow.bind(this)}
+        style={styles.container}
       />
     );
   };

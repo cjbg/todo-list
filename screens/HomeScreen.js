@@ -41,11 +41,9 @@ export default class HomeScreen extends React.Component {
                 <Text style={styles.headerText}>Todo List</Text>
               </View>
 
-              <View style={styles.welcomeContainer}>
-                <TaskList
+              <TaskList
                   todos={this.state.todos}
-                />
-              </View>
+              />
           </ScrollView>
       </View>
     );
@@ -64,10 +62,12 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
   contentContainer: {
-    paddingTop: 80,
+    paddingTop: 10,
+    flex: 1,
+    justifyContent: 'flex-start',
   },
   welcomeContainer: {
-    alignItems: 'center',
+    alignItems: 'flex-start',
     marginTop: 10,
     marginBottom: 20,
   },
@@ -78,7 +78,7 @@ const styles = StyleSheet.create({
   },
   headerContainer: {
     alignItems: 'center',
-    marginHorizontal: 50,
+    marginHorizontal: 10,
   },
   headerText: {
     fontSize: 25,
